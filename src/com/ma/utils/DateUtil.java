@@ -146,10 +146,7 @@ public class DateUtil{
 			return null;
 		}
 	}
-	/**
-	 * �榡�ഫ
-	 * yyyy/MM/dd
-	 */
+
 	public String formatDate(Date dd) {
 		if (dd != null) {
 			return formatDate(dd, format_type);
@@ -288,7 +285,38 @@ public class DateUtil{
 		return curDate;
 		
     }
-    
+    public String getChineseWeekDay(Date d){
+    	
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
+		String sd = null;
+		int dayofweek = c.get(Calendar.DAY_OF_WEEK);
+		switch(dayofweek){
+			case Calendar.SUNDAY:
+				sd = "星期日";
+				break;
+			case Calendar.MONDAY:
+				sd = "星期一";
+				break;
+			case Calendar.TUESDAY:
+				sd = "星期二";
+				break;
+			case Calendar.WEDNESDAY:
+				sd = "星期三";
+				break;
+			case Calendar.THURSDAY:
+				sd = "星期四";
+				break;
+			case Calendar.FRIDAY:
+				sd = "星期五";
+				break;
+			case Calendar.SATURDAY:
+				sd = "星期六";
+				break;	
+		}
+		return sd;
+		
+    }
 	public static void main(String args[]){
 		
 		
